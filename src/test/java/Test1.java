@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -44,23 +45,50 @@ public class Test1
        // String emailTextText = emailText.getText();
        // System.out.println(emailTextText);
 
-        driver.get("https://demoqa.com/checkbox");
-        driver.manage().window().maximize();
+        //driver.get("https://demoqa.com/checkbox");
+        //driver.manage().window().maximize();
 
-        String homeCheckBoxCssValue = "label[for='tree-node-home'] span.rct-checkbox svg";
-        WebElement homeCheckBox = driver.findElement(new By.ByCssSelector(homeCheckBoxCssValue));
-        homeCheckBox.click();
+        //String homeCheckBoxCssValue = "label[for='tree-node-home'] span.rct-checkbox svg";
+        //WebElement homeCheckBox = driver.findElement(new By.ByCssSelector(homeCheckBoxCssValue));
+        //homeCheckBox.click();
 
-        homeCheckBox = driver.findElement(new By.ByCssSelector(homeCheckBoxCssValue));
+        //homeCheckBox = driver.findElement(new By.ByCssSelector(homeCheckBoxCssValue));
 
-        String homeCheckboxClassName = homeCheckBox.getAttribute("class");
+        //String homeCheckboxClassName = homeCheckBox.getAttribute("class");
 
-        if (homeCheckboxClassName.equals("rct-icon rct-icon-check")){
-            System.out.println("Checkbox is checked!");
+        //if (homeCheckboxClassName.equals("rct-icon rct-icon-check")){
+        //    System.out.println("Checkbox is checked!");
+        //}
+        //else {
+        //    System.out.println("Checkbox is unchecked!");
+        //}
+
+
+        ///////////////////
+
+
+         driver.get("https://demoqa.com/automation-practice-form");
+         driver.manage().window().maximize();
+
+         WebElement sportCheckbox = driver.findElement(By.id("hobbies-checkbox-1"));
+         boolean isEnabled = sportCheckbox.isEnabled();
+         System.out.println(isEnabled);
+
+        WebElement sportsCheckboxLabel = driver.findElement(new By.ByCssSelector("label[for='hobbies-checkbox-1']"));
+
+        if (isEnabled){
+            try {
+                System.out.println("Entered try block!");
+                sportCheckbox.click();
+            }catch (ElementClickInterceptedException e){
+                sportsCheckboxLabel.click();
+                System.out.println("Entered catch block!");
+            }
         }
-        else {
-            System.out.println("Checkbox is unchecked!");
-        }
+
+        boolean isSelected = sportCheckbox.isSelected();
+        System.out.println(isSelected);
+
 
 
 
