@@ -67,29 +67,51 @@ public class Test1
         ///////////////////
 
 
-         driver.get("https://demoqa.com/automation-practice-form");
-         driver.manage().window().maximize();
+//        driver.get("https://demoqa.com/automation-practice-form");
+//        driver.manage().window().maximize();
+//
+//        WebElement sportCheckbox = driver.findElement(By.id("hobbies-checkbox-1"));
+//        boolean isEnabled = sportCheckbox.isEnabled();
+//        System.out.println(isEnabled);
+//
+//        WebElement sportsCheckboxLabel = driver.findElement(new By.ByCssSelector("label[for='hobbies-checkbox-1']"));
+//
+//        if (isEnabled){
+//            try {
+//                System.out.println("Entered try block!");
+//                sportCheckbox.click();
+//            }catch (ElementClickInterceptedException e){
+//                sportsCheckboxLabel.click();
+//                System.out.println("Entered catch block!");
+//            }
+//        }
+//
+//        boolean isSelected = sportCheckbox.isSelected();
+//        System.out.println(isSelected);
 
-         WebElement sportCheckbox = driver.findElement(By.id("hobbies-checkbox-1"));
-         boolean isEnabled = sportCheckbox.isEnabled();
-         System.out.println(isEnabled);
+        driver.get("https://demoqa.com/radio-button");
+        driver.manage().window().maximize();
 
-        WebElement sportsCheckboxLabel = driver.findElement(new By.ByCssSelector("label[for='hobbies-checkbox-1']"));
+        WebElement yesRadioButton = driver.findElement(new By.ByCssSelector("label[for='yesRadio']"));
+        boolean isEnabled = yesRadioButton.isEnabled();
 
         if (isEnabled){
-            try {
-                System.out.println("Entered try block!");
-                sportCheckbox.click();
-            }catch (ElementClickInterceptedException e){
-                sportsCheckboxLabel.click();
-                System.out.println("Entered catch block!");
-            }
+            yesRadioButton.click();
+            System.out.println("Clicked yesRadio button.");
         }
 
-        boolean isSelected = sportCheckbox.isSelected();
-        System.out.println(isSelected);
+        WebElement yesButton = driver.findElement(By.id("yesRadio"));
+        boolean yesRadioButtonSelected = yesButton.isSelected();
 
+        if (yesRadioButtonSelected){
+            System.out.println("Yes radio button is selected.");
+        }
 
+        WebElement output = driver.findElement(new By.ByCssSelector("p[class='mt-3']"));
+        System.out.println(output.getText());
+
+        WebElement noButton = driver.findElement(By.id("noRadio"));
+        System.out.println(noButton.isEnabled());
 
 
     }
