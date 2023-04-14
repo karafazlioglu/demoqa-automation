@@ -3,6 +3,7 @@ import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class Test1
 {
@@ -89,29 +90,48 @@ public class Test1
 //        boolean isSelected = sportCheckbox.isSelected();
 //        System.out.println(isSelected);
 
-        driver.get("https://demoqa.com/radio-button");
+//        driver.get("https://demoqa.com/radio-button");
+//        driver.manage().window().maximize();
+//
+//        WebElement yesRadioButton = driver.findElement(new By.ByCssSelector("label[for='yesRadio']"));
+//        boolean isEnabled = yesRadioButton.isEnabled();
+//
+//        if (isEnabled){
+//            yesRadioButton.click();
+//            System.out.println("Clicked yesRadio button.");
+//        }
+//
+//        WebElement yesButton = driver.findElement(By.id("yesRadio"));
+//        boolean yesRadioButtonSelected = yesButton.isSelected();
+//
+//        if (yesRadioButtonSelected){
+//            System.out.println("Yes radio button is selected.");
+//        }
+//
+//        WebElement output = driver.findElement(new By.ByCssSelector("p[class='mt-3']"));
+//        System.out.println(output.getText());
+//
+//        WebElement noButton = driver.findElement(By.id("noRadio"));
+//        System.out.println(noButton.isEnabled());
+
+        driver.get("https://demoqa.com/buttons");
         driver.manage().window().maximize();
 
-        WebElement yesRadioButton = driver.findElement(new By.ByCssSelector("label[for='yesRadio']"));
-        boolean isEnabled = yesRadioButton.isEnabled();
+        WebElement doubleClickButton = driver.findElement(By.id("doubleClickBtn"));
 
-        if (isEnabled){
-            yesRadioButton.click();
-            System.out.println("Clicked yesRadio button.");
-        }
+        Actions action = new Actions(driver);
+        action.doubleClick(doubleClickButton).perform();
 
-        WebElement yesButton = driver.findElement(By.id("yesRadio"));
-        boolean yesRadioButtonSelected = yesButton.isSelected();
+        WebElement message = driver.findElement(By.id("doubleClickMessage"));
+        String messageText = message.getText();
+        System.out.println(messageText);
 
-        if (yesRadioButtonSelected){
-            System.out.println("Yes radio button is selected.");
-        }
+        WebElement rightClickButton = driver.findElement(By.id("rightClickBtn"));
+        action.contextClick(rightClickButton).perform();
 
-        WebElement output = driver.findElement(new By.ByCssSelector("p[class='mt-3']"));
-        System.out.println(output.getText());
-
-        WebElement noButton = driver.findElement(By.id("noRadio"));
-        System.out.println(noButton.isEnabled());
+        WebElement rightClickMessage = driver.findElement(By.id("rightClickMessage"));
+        String messageTxt = rightClickMessage.getText();
+        System.out.println(messageTxt);
 
 
     }
