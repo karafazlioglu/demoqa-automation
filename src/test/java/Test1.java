@@ -114,25 +114,32 @@ public class Test1
 //        WebElement noButton = driver.findElement(By.id("noRadio"));
 //        System.out.println(noButton.isEnabled());
 
+
+//        WebElement doubleClickButton = driver.findElement(By.id("doubleClickBtn"));
+//
+//        Actions action = new Actions(driver);
+//        action.doubleClick(doubleClickButton).perform();
+//
+//        WebElement message = driver.findElement(By.id("doubleClickMessage"));
+//        String messageText = message.getText();
+//        System.out.println(messageText);
+//
+//        WebElement rightClickButton = driver.findElement(By.id("rightClickBtn"));
+//        action.contextClick(rightClickButton).perform();
+//
+//        WebElement rightClickMessage = driver.findElement(By.id("rightClickMessage"));
+//        String messageTxt = rightClickMessage.getText();
+//        System.out.println(messageTxt);
+
+        //         Dynamic elements
+        //         //div/button[starts-with(text(), 'Click Me')]
+        //         //div[last()]/button
+
         driver.get("https://demoqa.com/buttons");
         driver.manage().window().maximize();
 
-        WebElement doubleClickButton = driver.findElement(By.id("doubleClickBtn"));
-
-        Actions action = new Actions(driver);
-        action.doubleClick(doubleClickButton).perform();
-
-        WebElement message = driver.findElement(By.id("doubleClickMessage"));
-        String messageText = message.getText();
-        System.out.println(messageText);
-
-        WebElement rightClickButton = driver.findElement(By.id("rightClickBtn"));
-        action.contextClick(rightClickButton).perform();
-
-        WebElement rightClickMessage = driver.findElement(By.id("rightClickMessage"));
-        String messageTxt = rightClickMessage.getText();
-        System.out.println(messageTxt);
-
+        WebElement dynamicClickButton = driver.findElement(By.xpath("//div[last()]/button"));
+        dynamicClickButton.click();
 
     }
 }
