@@ -4,6 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class Test1
 {
@@ -135,11 +140,49 @@ public class Test1
         //         //div/button[starts-with(text(), 'Click Me')]
         //         //div[last()]/button
 
-        driver.get("https://demoqa.com/buttons");
+
+
+//        WebElement dynamicClickButton = driver.findElement(By.xpath("//div[last()]/button"));
+//        dynamicClickButton.click();
+
+//        driver.get("https://demoqa.com/dynamic-properties");
+//        driver.manage().window().maximize();
+
+//        WebElement textElement = driver.findElement(By.xpath("//div/p"));
+//        String text = textElement.getText();
+//        System.out.println(text);
+//
+//        WebElement firstButton = driver.findElement(By.id("enableAfter"));
+//         Duration duration = Duration.ofSeconds(5);
+////        WebDriverWait wait = new WebDriverWait(driver, duration);
+////        wait.until(ExpectedConditions.elementToBeClickable(firstButton));
+////        firstButton.click();
+//
+//        WebElement colorChangeButton = driver.findElement(By.id("colorChange"));
+//        String className = colorChangeButton.getAttribute("class");
+//        System.out.println("Before change : " + className);
+//
+//        WebDriverWait wait = new WebDriverWait(driver, duration);
+//        wait.until(ExpectedConditions.attributeToBe(colorChangeButton, "class", "mt-4 text-danger btn btn-primary"));
+//        className = colorChangeButton.getAttribute("class");
+//        System.out.println("After change: " + className);
+
+//        WebDriverWait wait = new WebDriverWait(driver, duration);
+//        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("visibleAfter")));
+//        driver.findElement(By.id("visibleAfter")).click();
+
+        driver.get("https://demoqa.com/dynamic-properties");
         driver.manage().window().maximize();
 
-        WebElement dynamicClickButton = driver.findElement(By.xpath("//div[last()]/button"));
-        dynamicClickButton.click();
+
+
+
+
+
+
+
+
+
 
     }
 }
