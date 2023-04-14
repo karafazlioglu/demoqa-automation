@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-
+//                              https://www.youtube.com/watch?v=z7h8t7v_Dgw&list=PLdcqyXSQj-QZtsjbtzQchScvZqDA84Lbd
 public class Test1
 {
     public static void main(String[] args)
@@ -153,7 +153,7 @@ public class Test1
 //        System.out.println(text);
 //
 //        WebElement firstButton = driver.findElement(By.id("enableAfter"));
-//         Duration duration = Duration.ofSeconds(5);
+         Duration duration = Duration.ofSeconds(5);
 ////        WebDriverWait wait = new WebDriverWait(driver, duration);
 ////        wait.until(ExpectedConditions.elementToBeClickable(firstButton));
 ////        firstButton.click();
@@ -170,9 +170,14 @@ public class Test1
 //        WebDriverWait wait = new WebDriverWait(driver, duration);
 //        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("visibleAfter")));
 //        driver.findElement(By.id("visibleAfter")).click();
+        ////// Broken Links - Images
 
-        driver.get("https://demoqa.com/dynamic-properties");
+        driver.get("https://demoqa.com/broken");
         driver.manage().window().maximize();
+        
+
+
+
 
 
 
