@@ -14,14 +14,14 @@ public class Test_Setting_Name_Lastname_EMail extends Base_test
     public void setLastName()
     {
         practiceFormPage.setLastName("Aksu");
-        Assertions.assertEquals("Aksu",practiceFormPage.getLastName(), "Name value is not correct!");
+        Assertions.assertEquals("Aksu",practiceFormPage.getLastName(), "Last Name value is not correct!");
 
     }
     @Test
     public void setEMail()
     {
         practiceFormPage.setEMail("mustafa123@gmail.com");
-        Assertions.assertEquals("mustafa123@gmail.com",practiceFormPage.getEMail(), "Name value is not correct!");
+        Assertions.assertEquals("mustafa123@gmail.com",practiceFormPage.getEMail(), "E mail value is not correct!");
 
     }
 
