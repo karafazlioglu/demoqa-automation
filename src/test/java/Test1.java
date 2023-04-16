@@ -172,8 +172,8 @@ public class Test1
 //        driver.findElement(By.id("visibleAfter")).click();
         ////// Broken Links - Images
 
-        driver.get("https://demoqa.com/broken");
-        driver.manage().window().maximize();
+//        driver.get("https://demoqa.com/broken");
+//        driver.manage().window().maximize();
         
 
 

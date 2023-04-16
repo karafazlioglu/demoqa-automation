@@ -11,6 +11,9 @@ public class PracticeFormPage
     private final By name = By.id("firstName");
     private final By lastName = By.id("lastName");
     private final By EMail = By.id("userEmail");
+    private final By gender = By.xpath("//label[@for='gender-radio-1']");
+    private final By gender2 = By.id("gender-radio-1");
+
 
     public PracticeFormPage(WebDriver driver)
     {
@@ -38,6 +41,16 @@ public class PracticeFormPage
         eMailSpace.sendKeys(EMailAsString);
 
     }
+    public void setGender()
+    {
+        WebElement genderButton = driver.findElement(gender);
+        genderButton.click();
+        System.out.println("Clicked yesRadio button.");
+//        if (isEnabled){
+//            genderButton.click();
+//            System.out.println("Clicked yesRadio button.");
+//        }
+    }
     public String getName()
     {
         WebElement nameSpace = driver.findElement(name);
@@ -54,5 +67,10 @@ public class PracticeFormPage
     {
         WebElement eMAilSpace = driver.findElement(EMail);
         return eMAilSpace.getAttribute("value");
+    }
+    public boolean getGender()
+    {
+        WebElement genderButton2 = driver.findElement(gender2);
+        return genderButton2.isSelected();
     }
 }

@@ -22,11 +22,11 @@ public class Base_test
 
     }
 
-    @AfterAll
-    public void tearDown()
-    {
-        driver.quit();
-        System.out.println("Test finished.");
-    }
+//    @AfterAll
+//    public void tearDown()
+//    {
+//        driver.quit();
+//        System.out.println("Test finished.");
+//    }
 
 }
